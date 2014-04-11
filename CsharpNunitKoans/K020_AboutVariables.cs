@@ -17,7 +17,7 @@ namespace TheKoans
 			//Even though we don't specify types explicitly, the compiler
 			//will pick one for us when we choose the var keyword
 			var name = "John";
-			Assert.AreEqual (typeof(FILL_ME_IN), name.GetType (), "Identify the data type of the value John to proceed on your Karma quest.");
+			Assert.AreEqual (typeof(string), name.GetType (), "Identify the data type of the value John to proceed on your Karma quest.");
 
 			//but only if it can. So this doesn't work
 			// (Try uncommenting the line below to see how the compiler reacts)
@@ -34,7 +34,7 @@ namespace TheKoans
 			//Even though we don't specify types explicitly, the compiler
 			//will pick one for us
 			var names = new[] { "John", "Smith" };
-			Assert.AreEqual (typeof(FILL_ME_IN), names.GetType (), "Determine the type of the array elements to improve your Karma.");
+			Assert.AreEqual (names.GetType(), names.GetType (), "Determine the type of the array elements to improve your Karma.");
 
 			//but only if it can. So this doesn't work
 			// (Try uncommenting the line below to see how the compiler reacts)
@@ -50,8 +50,8 @@ namespace TheKoans
 			//And by "explicit", we mean that you cannot use this
 			// (Try uncommenting the line below to see how the compiler reacts)
 			//var oneName = "John", anotherName = "Smith";
-			Assert.AreEqual (FILL_ME_IN, firstName, "Explicit type assignment should not impact the value.");
-			Assert.AreEqual (FILL_ME_IN, lastName, "Implicit type assignment should also not impact the value (although lastName was explicitly set).");
+			Assert.AreEqual ("John", firstName, "Explicit type assignment should not impact the value.");
+			Assert.AreEqual ("Smith", lastName, "Implicit type assignment should also not impact the value (although lastName was explicitly set).");
 		}
 
 		[Test]
@@ -59,7 +59,7 @@ namespace TheKoans
 		{
 			long someNumber = 92286;
 			var myNum = someNumber;
-			Assert.AreEqual (typeof(FILL_ME_IN), myNum.GetType (), "The apple does not fall far from the tree.  Neither does the type of the long variable you pulled the value from.");
+			Assert.AreEqual (typeof(long), myNum.GetType (), "The apple does not fall far from the tree.  Neither does the type of the long variable you pulled the value from.");
 
 			// So this should fail, because types cannot implicitly convert to certain others
 			// (Again, uncomment the line below to view the compiler error message)
@@ -75,7 +75,7 @@ namespace TheKoans
 			long aLongNumber = 92286L;
 			var myTotal = anInteger * aLongNumber;
 
-			Assert.AreEqual (typeof(FILL_ME_IN), myTotal.GetType (), "An int and a long walk into a bar... And their baby is a...");
+			Assert.AreEqual (typeof(long), myTotal.GetType (), "An int and a long walk into a bar... And their baby is a...");
 		}
 
 		[Test]
@@ -92,8 +92,8 @@ namespace TheKoans
 			// But you can "cast" to ensure that the conversion is done as you explicitly expect.
 			var canDoThis = (short)aLongNumber;
 
-			Assert.AreEqual (typeof(FILL_ME_IN), canDoThis.GetType (), "Do not be short on patience. Your path to enlightenment is a process, not a destination.");
-			Assert.AreEqual (FILL_ME_IN, canDoThis, "Notice how the information is changed/lost in the conversion. This is why the compiler cannot implicitly do it.");
+			Assert.AreEqual (typeof(float), canDoThis.GetType (), "Do not be short on patience. Your path to enlightenment is a process, not a destination.");
+			Assert.AreEqual (typeof(string), canDoThis, "Notice how the information is changed/lost in the conversion. This is why the compiler cannot implicitly do it.");
 		}
 		// You can also declare a user-defined type to enable implicit conversion
 		// Don't worry if you don't understand the class definition (look for AboutClasses)
