@@ -92,8 +92,8 @@ namespace TheKoans
 			// But you can "cast" to ensure that the conversion is done as you explicitly expect.
 			var canDoThis = (short)aLongNumber;
 
-			Assert.AreEqual (typeof(float), canDoThis.GetType (), "Do not be short on patience. Your path to enlightenment is a process, not a destination.");
-			Assert.AreEqual (typeof(string), canDoThis, "Notice how the information is changed/lost in the conversion. This is why the compiler cannot implicitly do it.");
+			Assert.AreEqual (typeof(short), canDoThis.GetType (), "Do not be short on patience. Your path to enlightenment is a process, not a destination.");
+			Assert.AreEqual ((long)canDoThis, canDoThis, "Notice how the information is changed/lost in the conversion. This is why the compiler cannot implicitly do it.");
 		}
 		// You can also declare a user-defined type to enable implicit conversion
 		// Don't worry if you don't understand the class definition (look for AboutClasses)
@@ -132,8 +132,8 @@ namespace TheKoans
 			var firstTest = implicitInt + oneSpecialInt;
 			var secondTest = anotherSpecialInt + implicitInt;
 
-			Assert.AreEqual (typeof(FILL_ME_IN), firstTest.GetType (), "An int and a user-defined type that can return an int walk into a bar... And their baby is a...");
-			Assert.AreEqual (typeof(FILL_ME_IN), secondTest.GetType (), "This will show you the type is not based on the order of expression's operands, but their result.");
+			Assert.AreEqual (typeof(int), firstTest.GetType (), "An int and a user-defined type that can return an int walk into a bar... And their baby is a...");
+			Assert.AreEqual (typeof(int), secondTest.GetType (), "This will show you the type is not based on the order of expression's operands, but their result.");
 		}
 	}
 }
